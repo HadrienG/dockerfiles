@@ -9,4 +9,13 @@ RUN apt-get install -y r-base
 RUN git clone git://github.com/lmrodriguezr/nonpareil.git && \
     cd nonpareil && \
     make && \
-    make install
+    make install && \
+    cd .. && \
+    rm -rf nonpareil
+
+#installs scythe
+RUN git clone https://github.com/vsbuffalo/scythe.git && \
+    cd scythe && \
+    make all && \
+    cd .. && \
+    rm -rf scythe
