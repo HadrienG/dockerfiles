@@ -19,3 +19,11 @@ RUN git clone https://github.com/vsbuffalo/scythe.git && \
     make all && \
     cd .. && \
     rm -rf scythe
+
+#installs sickle
+RUN git clone https://github.com/najoshi/sickle.git && \
+    cd sickle && \
+    make && \
+    mv sickle /usr/bin/ && \
+    cd .. && \
+    rm -rf sickle/
