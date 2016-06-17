@@ -17,6 +17,7 @@ RUN git clone git://github.com/lmrodriguezr/nonpareil.git && \
 RUN git clone https://github.com/vsbuffalo/scythe.git && \
     cd scythe && \
     make all && \
+    mv scythe /usr/bin/ && \
     cd .. && \
     rm -rf scythe
 
@@ -26,4 +27,4 @@ RUN git clone https://github.com/najoshi/sickle.git && \
     make && \
     mv sickle /usr/bin/ && \
     cd .. && \
-    rm -rf sickle/
+    rm -rf sickle
