@@ -3,7 +3,7 @@ FROM debian:jessie
 MAINTAINER Hadrien Gourlé <gourlehadrien@gmail.com>
 
 RUN apt-get update --fix-missing && \
-    apt-get install -y wget vim gcc g++ git unzip lbzip2 && \
+    apt-get install -y wget vim gcc g++ git unzip lbzip2 make && \
     apt-get clean
 
 # Create the home folder
