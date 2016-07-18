@@ -36,12 +36,3 @@ RUN wget https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.2.9/bowtie2
     rm bowtie2-2.2.9-linux-x86_64.zip && \
     mv bowtie2-2.2.9/bowtie2* /usr/bin/ && \
     rm -rf bowtie2-2.2.9
-
-#installs bcftools
-RUN wget https://github.com/samtools/bcftools/releases/download/1.3.1/bcftools-1.3.1.tar.bz2 && \
-    tar xf bcftools-1.3.1.tar.bz2 && \
-    cd bcftools-1.3.1 && \
-    make && \
-    make install && \
-    cd .. && \
-    rm -rf bcftools-1.3.1
