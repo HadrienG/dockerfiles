@@ -24,4 +24,6 @@ RUN git clone https://github.com/najoshi/sickle.git && \
 RUN wget http://spades.bioinf.spbau.ru/release3.8.2/SPAdes-3.8.2-Linux.tar.gz && \
     tar xzf SPAdes-3.8.2-Linux.tar.gz && \
     mv SPAdes-3.8.2-Linux/bin/* /usr/bin && \
-    rm -rf SPAdes-3.8.2
+    mv SPAdes-3.8.2-Linux/share/* /usr/share && \
+    rm -rf SPAdes-3.8.2-Linux && \
+    rm SPAdes-3.8.2-Linux.tar.gz
