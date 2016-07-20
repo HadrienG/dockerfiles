@@ -21,7 +21,7 @@ RUN git clone https://github.com/najoshi/sickle.git && \
     rm -rf sickle
 
 #installs velvet
-RUN wget wget http://www.ebi.ac.uk/~zerbino/velvet/velvet_1.2.10.tgz && \
+RUN wget http://www.ebi.ac.uk/~zerbino/velvet/velvet_1.2.10.tgz && \
     tar xzf velvet_1.2.10.tgz && \
     cd velvet_1.2.10 && \
     make && \
