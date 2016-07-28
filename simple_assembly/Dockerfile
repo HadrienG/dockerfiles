@@ -2,8 +2,6 @@ FROM hadrieng/docker_base
 
 MAINTAINER Hadrien Gourlé <gourlehadrien@gmail.com>
 
-RUN apt-get install -y zlib1g-dev libncurses5-dev python
-
 #installs scythe
 RUN git clone https://github.com/vsbuffalo/scythe.git && \
     cd scythe && \

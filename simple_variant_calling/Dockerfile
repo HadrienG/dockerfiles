@@ -2,9 +2,6 @@ FROM hadrieng/docker_base
 
 MAINTAINER Hadrien Gourlé <gourlehadrien@gmail.com>
 
-#installs samtools and bowtie2 dependencies
-RUN apt-get install -y zlib1g-dev libncurses5-dev python
-
 #installs samtools
 RUN wget https://github.com/samtools/samtools/releases/download/1.3.1/samtools-1.3.1.tar.bz2 && \
     tar xf samtools-1.3.1.tar.bz2 && \
