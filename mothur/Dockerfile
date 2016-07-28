@@ -3,7 +3,7 @@ FROM hadrieng/docker_base
 MAINTAINER Hadrien Gourlé <gourlehadrien@gmail.com>
 
 #installs mothur
-RUN wget https://github.com/mothur/mothur/releases/download/v1.38.1/Mothur.linux_64.zip 77 && \
+RUN curl -O https://github.com/mothur/mothur/releases/download/v1.38.1/Mothur.linux_64.zip && \
     unzip Mothur.linux_64.zip && \
     mv mothur/mothur /usr/bin/ && \
     mv mothur/uchime /usr/bin/ && \
