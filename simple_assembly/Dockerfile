@@ -6,22 +6,19 @@ MAINTAINER Hadrien Gourlé <gourlehadrien@gmail.com>
 RUN git clone https://github.com/vsbuffalo/scythe.git && \
     cd scythe && \
     make all && \
-    mv scythe /usr/bin/ && \
-    cd .. && \
-    rm -rf scythe
+    cd ..
 
 #installs sickle
 RUN git clone https://github.com/najoshi/sickle.git && \
     cd sickle && \
     make && \
-    mv sickle /usr/bin/ && \
-    cd .. && \
-    rm -rf sickle
+    cd ..
 
 #installs velvet
 RUN git clone https://github.com/dzerbino/velvet.git && \
     cd velvet && \
     make && \
-    mv velvet* /usr/bin && \
-    cd .. && \
-    rm -rf velvet_1.2.10
+    cd ..
+
+#adds scythe and sickle to the path
+ENV PATH /scythe:/sickle:/velvet:$PATH
