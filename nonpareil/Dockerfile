@@ -23,7 +23,7 @@ RUN git clone https://github.com/vsbuffalo/scythe.git && \
 RUN git clone https://github.com/najoshi/sickle.git && \
     cd sickle && \
     make && \
-    cd .. &&
+    cd ..
 
 #adds scythe and sickle to the path
 ENV PATH /scythe:/sickle:$PATH
