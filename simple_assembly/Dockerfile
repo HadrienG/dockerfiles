@@ -17,7 +17,7 @@ RUN git clone https://github.com/najoshi/sickle.git && \
 #installs velvet
 RUN git clone https://github.com/dzerbino/velvet.git && \
     cd velvet && \
-    make && \
+    make 'MAXKMERLENGTH=301' && \
     cd ..
 
 #adds scythe and sickle to the path
