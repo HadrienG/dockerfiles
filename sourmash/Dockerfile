@@ -19,6 +19,8 @@ RUN apt-get install -y python-dev && \
     wget https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
     pip install numpy && \
+    pip install scipy && \
+    pip install matplotlib && \
     pip install sourmash
 
 #adds scythe and sickle to the path
