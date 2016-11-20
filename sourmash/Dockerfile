@@ -21,6 +21,7 @@ RUN apt-get install -y python-dev python-tk && \
     pip install numpy && \
     pip install scipy && \
     pip install matplotlib && \
+    sed -i 's/tkagg/agg/g' /usr/local/lib/python2.7/dist-packages/matplotlib/mpl-data/matplotlibrc && \
     pip install sourmash
 
 #adds scythe and sickle to the path
