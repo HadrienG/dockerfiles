@@ -5,7 +5,8 @@ MAINTAINER Hadrien Gourlé <gourlehadrien@gmail.com>
 # install perl deps mummer and python3
 RUN apt-get install -y libdatetime-perl \
     libxml-simple-perl libdigest-md5-perl bioperl \
-    mummer python3 python3-dev libxml2-dev libxslt-dev
+    mummer python3 python3-dev libxml2-dev libxslt-dev \
+    python-genometools genometools python-dev python-setuptools
 
 # install prokka
 RUN git clone https://github.com/tseemann/prokka.git && \
@@ -34,3 +35,11 @@ ENV PATH /SPAdes-3.9.1-Linux/bin:$PATH
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
     python3 get-pip.py && \
     pip3 install circlator
+
+# install gff3toembl
+RUN wget https://github.com/sanger-pathogens/gff3toembl/archive/v1.1.4.tar.gz && \
+    tar xzf v1.1.4.tar.gz && \
+    rm v1.1.4.tar.gz && \
+    cd gff3toembl-1.1.4 && \
+    python setup.py install && \
+    ln -s /usr/lib/libgenometools.so.0 /usr/lib/libgenometools.so
