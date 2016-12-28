@@ -2,11 +2,12 @@ FROM hadrieng/docker_base
 
 MAINTAINER Hadrien Gourlé <gourlehadrien@gmail.com>
 
-# install perl deps mummer and python3
+# install perl deps mummer python3 and java
 RUN apt-get install -y libdatetime-perl \
     libxml-simple-perl libdigest-md5-perl bioperl \
     mummer python3 python3-dev libxml2-dev libxslt-dev \
-    python-genometools genometools python-dev python-setuptools
+    python-genometools genometools python-dev python-setuptools \
+    default-jre
 
 # install prokka
 RUN git clone https://github.com/tseemann/prokka.git && \
