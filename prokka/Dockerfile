@@ -13,6 +13,12 @@ RUN apt-get install -y libdatetime-perl \
 RUN git clone https://github.com/tseemann/prokka.git && \
     prokka/bin/prokka --setupdb
 
+# install newer tbl2asn
+RUN wget ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools/converters/by_program/tbl2asn/linux64.tbl2asn.gz && \
+    gzip -d linux64.tbl2asn.gz && \
+    chmod 755 linux64.tbl2asn && \
+    mv linux64.tbl2asn /prokka/binaries/linux/tbl2asn
+
 # add prokka and prodigal to path
 ENV PATH /prokka/bin:/prokka/binaries/linux:$PATH
 
