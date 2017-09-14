@@ -11,7 +11,8 @@ RUN apt-get update --fix-missing && apt-get install -y \
     make \
     curl \
     python \
-    lbzip2 zlib1g-dev libncurses5-dev && \
+    lbzip2 zlib1g-dev libncurses5-dev \
+    bzip2 && \
     apt-get clean
 
 # Create the home folder
