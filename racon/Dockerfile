@@ -17,4 +17,4 @@ RUN git clone https://github.com/isovic/racon.git && \
     cd ..
 
 
-ENV PATH /minimap2:/racon:$PATH
+ENV PATH /minimap2:/racon/bin:$PATH
