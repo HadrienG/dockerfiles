@@ -2,6 +2,9 @@ FROM hadrieng/docker_base
 
 MAINTAINER Hadrien Gourlé <gourlehadrien@gmail.com>
 
+# install deps for samtools
+RUN apt-get update --fix-missing && apt-get install -y libbz2-dev liblzma-dev
+
 # install samtools
 RUN latest=$(curl -s https://api.github.com/repos/samtools/samtools/releases | grep browser_download_url | grep 'tar.bz2' | head -n 1 | cut -d '"' -f 4) && \
     wget $latest && \
