@@ -30,6 +30,9 @@ RUN git clone --recursive https://github.com/jts/nanopolish && \
     make && \
     cd ..
 
+# install parallel
+RUN (wget -O - pi.dk/3 || curl pi.dk/3/ || fetch -o - http://pi.dk/3) | bash
+
 # modify script headers and make them executable
 RUN cd nanopolish && \
     sed -i '1s:^:#!/usr/bin/env python\n:' scripts/nanopolish_merge.py && \
