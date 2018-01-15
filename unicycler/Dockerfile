@@ -30,7 +30,7 @@ RUN echo 'deb http://ftp.de.debian.org/debian jessie-backports main' \
     /usr/sbin/update-java-alternatives -s java-1.8.0-openjdk-amd64
 
 # install pilon
-RUN latest=(curl https://api.github.com/repos/broadinstitute/pilon/releases | grep browser_download_url | grep '.jar' | head -n 1 | cut -d '"' -f 4) && \
+RUN latest=$(curl https://api.github.com/repos/broadinstitute/pilon/releases | grep browser_download_url | grep '.jar' | head -n 1 | cut -d '"' -f 4) && \
     wget $latest && \
     cp pilon-?.??.jar /usr/bin/ && \
     echo -e '#!/bin/bash\njava -jar /pilon-?.??.jar $@' > /usr/bin/pilon
