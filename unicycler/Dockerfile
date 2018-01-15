@@ -32,7 +32,7 @@ RUN echo 'deb http://ftp.de.debian.org/debian jessie-backports main' \
 # install pilon
 RUN latest=(curl https://api.github.com/repos/broadinstitute/pilon/releases | grep browser_download_url | grep '.jar' | head -n 1 | cut -d '"' -f 4) && \
     wget $latest && \
-    cp pilon-?.??.jar /usr/bin/
+    cp pilon-?.??.jar /usr/bin/ && \
     echo -e '#!/bin/bash\njava -jar /pilon-?.??.jar $@' > /usr/bin/pilon
 
 # install samtools
@@ -57,12 +57,14 @@ RUN latest=$(curl -s https://api.github.com/repos/BenLangmead/bowtie2/releases |
 RUN latest=$(curl -s https://api.github.com/repos/ablab/spades/releases | grep browser_download_url | grep 'Linux.tar.gz' | head -n 1 | cut -d '"' -f 4) && \
     wget $latest && \
     tar xzf SPAdes-?.*-Linux.tar.gz && \
-    mv SPAdes-?.*-Linux spades
+    mv SPAdes-?.*-Linux spades && \
+    rm SPAdes-?.*-Linux.tar.gz
 
 # install blast
 RUN wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-?.?.?+-x64-linux.tar.gz && \
     tar xzf ncbi-blast-?.?.?+-x64-linux.tar.gz && \
-    cp ncbi-blast-?.?.?+ blast
+    cp ncbi-blast-?.?.?+ blast && \
+    rm ncbi-blast-?.?.?+-x64-linux.tar.gz
 
 # install unicycler
 RUN pip3 install git+https://github.com/rrwick/Unicycler.git
