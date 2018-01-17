@@ -6,7 +6,7 @@ MAINTAINER Hadrien Gourlé <gourlehadrien@gmail.com>
 RUN apt-get install -y python3 python3-pkg-resources
 
 # install samtools deps
-RUN apt-get install -y libbz2-dev
+RUN apt-get install -y libbz2-dev liblzma-dev
 
 # install minimap2
 RUN git clone https://github.com/lh3/minimap2 && \
