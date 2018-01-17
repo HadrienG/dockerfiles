@@ -66,7 +66,7 @@ RUN latest=$(curl -s https://api.github.com/repos/ablab/spades/releases | grep b
 # install blast
 RUN wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-?.?.?+-x64-linux.tar.gz && \
     tar xzf ncbi-blast-?.?.?+-x64-linux.tar.gz && \
-    cp ncbi-blast-?.?.?+ blast && \
+    mv ncbi-blast-?.?.?+ blast && \
     rm ncbi-blast-?.?.?+-x64-linux.tar.gz
 
 # install unicycler
