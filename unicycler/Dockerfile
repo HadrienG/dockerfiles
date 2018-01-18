@@ -3,7 +3,7 @@ FROM hadrieng/docker_base
 MAINTAINER Hadrien Gourlé <gourlehadrien@gmail.com>
 
 # install python3
-RUN apt-get install -y python3 python3-pkg-resources
+RUN apt-get install -y python3 python3-pkg-resources python3-pip
 
 # install samtools deps
 RUN apt-get install -y libbz2-dev liblzma-dev
