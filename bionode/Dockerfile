@@ -9,7 +9,7 @@ RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh
     nvm install --lts && \
     npm i -g bionode-ncbi  && \
     npm i bionode-sra && \
-    mv node_modules/bionode-sra/ /root/.nvm/versions/node/v?.?.?/lib/node_modules/ && \
+    mv /root/node_modules/bionode-sra/ /root/.nvm/versions/node/v?.?.?/lib/node_modules/ && \
     cd /root/.nvm/versions/node/v?.?.?/bin/ && \
     ln -s ../lib/node_modules/bionode-sra/cli.js bionode-sra
 
