@@ -7,7 +7,7 @@ RUN echo 'deb http://ftp.de.debian.org/debian jessie-backports main' \
     >> /etc/apt/sources.list && \
     apt-get update --fix-missing && \
     apt install -y -t jessie-backports \
-        libjbzip2-java libcommons-math3-java
+        libjbzip2-java libcommons-math3-java \
         openjdk-8-jre-headless \
         ca-certificates-java \
         openjdk-8-jdk && \
