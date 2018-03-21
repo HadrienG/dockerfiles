@@ -1,4 +1,4 @@
-FROM joey711/dada2-base
+FROM bioconductor/release_core2
 
 MAINTAINER Hadrien Gourlé <gourlehadrien@gmail.com>
 
@@ -20,3 +20,5 @@ RUN apt-get update -qq && apt-get -y install \
     remotes \
     selectr \
     caTools
+
+RUN R -e 'source("https://bioconductor.org/biocLite.R"); biocLite("dada2")'
