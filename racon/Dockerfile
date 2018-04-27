@@ -11,10 +11,10 @@ RUN git clone https://github.com/lh3/minimap2 && \
 # install racon
 RUN git clone https://github.com/isovic/racon.git && \
     cd racon && \
-    make modules && \
-    make tools && \
-    make && \
-    cd ..
+    mkdir build && \
+    cd build && \
+    cmake -DCMAKE_BUILD_TYPE=Release .. && \
+    make
 
 
-ENV PATH /minimap2:/racon/bin:$PATH
+ENV PATH /minimap2:/racon/build/bin:$PATH
