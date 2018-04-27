@@ -60,9 +60,9 @@ RUN latest=$(curl -s https://api.github.com/repos/samtools/samtools/releases | g
 # install bowtie2
 RUN latest=$(curl -s https://api.github.com/repos/BenLangmead/bowtie2/releases | grep browser_download_url | grep 'linux-x86_64.zip' | head -n 1 | cut -d '"' -f 4) && \
     wget $latest && \
-    unzip bowtie2-?.?.?-linux-x86_64.zip && \
-    mv bowtie2-?.?.?-linux-x86_64 bowtie2 && \
-    rm bowtie2-?.?.?-linux-x86_64.zip
+    unzip bowtie2-?.*-linux-x86_64.zip && \
+    mv bowtie2-?.*-linux-x86_64 bowtie2 && \
+    rm bowtie2-?.*-linux-x86_64.zip
 
 # install spades
 RUN latest=$(curl -s https://api.github.com/repos/ablab/spades/releases | grep browser_download_url | grep 'Linux.tar.gz' | head -n 1 | cut -d '"' -f 4) && \
