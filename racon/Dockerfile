@@ -17,7 +17,7 @@ RUN wget http://www.cmake.org/files/v3.2/cmake-3.2.2.tar.gz && \
     make install
 
 # install racon
-RUN git clone https://github.com/isovic/racon.git && \
+RUN git clone --recursive https://github.com/isovic/racon.git && \
     cd racon && \
     mkdir build && \
     cd build && \
