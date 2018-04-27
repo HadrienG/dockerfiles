@@ -80,4 +80,4 @@ RUN wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-?
 # install unicycler
 RUN pip3 install git+https://github.com/rrwick/Unicycler.git
 
-ENV PATH /minimap2:/racon/bin:/bowtie2:/spades/bin:/blast/bin:$PATH
+ENV PATH /minimap2:/racon/build/bin:/bowtie2:/spades/bin:/blast/bin:$PATH
