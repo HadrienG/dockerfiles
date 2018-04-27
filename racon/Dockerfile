@@ -8,9 +8,16 @@ RUN git clone https://github.com/lh3/minimap2 && \
     make && \
     cd ..
 
+# cmake 3.2
+RUN wget http://www.cmake.org/files/v3.2/cmake-3.2.2.tar.gz && \
+    tar xf cmake-3.2.2.tar.gz && \
+    cd cmake-3.2.2 && \
+    ./configure && \
+    make && \
+    make install
+
 # install racon
-RUN apt-get -y install cmake && \
-    git clone https://github.com/isovic/racon.git && \
+RUN git clone https://github.com/isovic/racon.git && \
     cd racon && \
     mkdir build && \
     cd build && \
