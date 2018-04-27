@@ -14,13 +14,21 @@ RUN git clone https://github.com/lh3/minimap2 && \
     make && \
     cd ..
 
-# install racon
-RUN git clone https://github.com/isovic/racon.git && \
-    cd racon && \
-    make modules && \
-    make tools && \
+# cmake 3.2
+RUN wget http://www.cmake.org/files/v3.2/cmake-3.2.2.tar.gz && \
+    tar xf cmake-3.2.2.tar.gz && \
+    cd cmake-3.2.2 && \
+    ./configure && \
     make && \
-    cd ..
+    make install
+
+# install racon
+RUN git clone --recursive https://github.com/isovic/racon.git && \
+    cd racon && \
+    mkdir build && \
+    cd build && \
+    cmake -DCMAKE_BUILD_TYPE=Release .. && \
+    make
 
 # install java-1.8
 RUN echo 'deb http://ftp.de.debian.org/debian jessie-backports main' \
