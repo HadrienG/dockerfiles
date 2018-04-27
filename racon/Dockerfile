@@ -9,7 +9,8 @@ RUN git clone https://github.com/lh3/minimap2 && \
     cd ..
 
 # install racon
-RUN git clone https://github.com/isovic/racon.git && \
+RUN apt-get -y install cmake && \
+    git clone https://github.com/isovic/racon.git && \
     cd racon && \
     mkdir build && \
     cd build && \
