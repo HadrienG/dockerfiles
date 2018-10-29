@@ -16,7 +16,7 @@ RUN wget https://github.com/hyattpd/Prodigal/releases/download/v2.6.3/prodigal.l
     mv prodigal.linux /usr/bin/prodigal
 
 # pplacer
-RUN apt install unzip && \
+RUN apt-get update && apt-get install zip unzip && \
     wget https://github.com/matsen/pplacer/releases/download/v1.1.alpha19/pplacer-linux-v1.1.alpha19.zip && \
     unzip pplacer-linux-v1.1.alpha19.zip && \
     cd pplacer-Linux-v1.1.alpha19 && \
