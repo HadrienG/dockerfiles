@@ -2,6 +2,15 @@ FROM python:2
 
 MAINTAINER Hadrien Gourlé <gourlehadrien@gmail.com>
 
+#deps
+RUN wget http://eddylab.org/software/hmmer/hmmer-3.2.1.tar.gz && \
+    tar xf hmmer-3.2.1.tar.gz && \
+    cd hmmer-3.2.1/ && \
+    ./configure && \
+    make && \
+    make install
+
+# checkm
 RUN pip install checkm-genome && \
     mkdir -p checkm_data && \
     cd checkm_data && \
