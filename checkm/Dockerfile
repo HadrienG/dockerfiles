@@ -2,13 +2,18 @@ FROM python:2
 
 MAINTAINER Hadrien Gourlé <gourlehadrien@gmail.com>
 
-#deps
+# hmmer
 RUN wget http://eddylab.org/software/hmmer/hmmer-3.2.1.tar.gz && \
     tar xf hmmer-3.2.1.tar.gz && \
     cd hmmer-3.2.1/ && \
     ./configure && \
     make && \
     make install
+
+# prodigal
+RUN wget https://github.com/hyattpd/Prodigal/releases/download/v2.6.3/prodigal.linux && \
+    chmod +x prodigal.linux && \
+    mv prodigal.linux /usr/bin/prodigal
 
 # checkm
 RUN pip install checkm-genome && \
