@@ -30,3 +30,6 @@ RUN pip install checkm-genome && \
     tar xzf checkm_data_2015_01_16.tar.gz && \
     cd .. && \
     printf "checkm_data\ncheckm_data\n" | checkm data setRoot
+
+# refinem
+RUN pip install refinem
